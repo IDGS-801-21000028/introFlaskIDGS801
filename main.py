@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -53,8 +53,36 @@ def alumnos():
 def maestros():
   return render_template("maestros.html")
 
+@app.route("/calcular", methods=["GET","POST"])
+def calcular():
+  if request.method == "POST":
+    num1 = request.form.get("n1")
+    num2 = request.form.get("n2")
+    return "La multiplicación de {} x {} = {}".format(num1,num2,str(int(num1)*int(num2)))
+  else:
+    return '''
+      <form action="/calcular" method="POST">
+        <label for="num1">N1:</label>
+        <input type="text" name="n1" id="num1"><br>
+        <label for="num2">N2:</label>
+        <input type="text" name="n2" id="num2"><br>
+        <input type="submit">
+      </form>
+    '''
 
+@app.route("/OperaBas")
+def operas():
+  return render_template("OperaBas.html")
 
+@app.route("/resultado", methods=["GET","POST"])
+def resultado():
+  if request.method == "POST":
+    num1 = request.form.get("n1")
+    num2 = request.form.get("n2")
+    return "La multiplicación de {} x {} = {}".format(num1,num2,str(int(num1)*int(num2)))
+
+  
+  
 
 
 
