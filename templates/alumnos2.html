@@ -1,0 +1,55 @@
+{% extends "layout2.html" %}
+
+{% block container %}
+
+  {% import '_macros.html'  as macros %}
+
+  <h1>Hola desde Alumnos !!!</h1>
+
+  <!-- {% for item in form %}
+    <label for="{{item.name}}">{{item.name}}</label>
+    {{item}}
+  {% endfor %} -->
+    
+
+  <form action="" method="post" novalidate>
+
+    <div class="row control-group">
+      <div class="form-group form-group col-xs-12 floating-label-form-gruop controls">
+        <!-- {{macros.datos("Nombre","Ingresa el nombre")}} -->
+        <!-- {{form.nombre}} -->
+        {{macros.camposNuevos(form.nombre, class="form-control")}}
+      </div>
+    </div>
+
+    <div class="row control-group" >
+      <div class="form-group form-group col-xs-12 floating-label-form-gruop controls">
+        {{macros.camposNuevos(form.apaterno, class="form-control")}}
+      </div>
+    </div>
+
+    <div class="row control-group" >
+      <div class="form-group form-group col-xs-12 floating-label-form-gruop controls">
+        {{macros.camposNuevos(form.amaterno, class="form-control")}}
+      </div>
+    </div>
+
+    <div class="row control-group" >
+      <div class="form-group form-group col-xs-12 floating-label-form-gruop controls">
+        {{macros.camposNuevos(form.email, class="form-control")}}
+      </div>
+    </div>
+
+    <div class="row control-group" >
+      <div class="form-group form-group col-xs-12 floating-label-form-gruop controls">
+        {{macros.camposNuevos(form.edad, class="form-control")}}
+      </div>
+    </div>
+
+    
+
+    <!-- {{macros.datos("Sueldo","Ingresa el sueldo","number")}} -->
+  </form>
+
+
+{% endblock %}
