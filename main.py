@@ -47,11 +47,19 @@ def index():
 @app.route("/alumnos/", methods = ['GET','POST'])
 def alumnos():
   alumno_clase = UserForm(request.form)
+  nom = ""
+  apa = ""
+  ama = ""
+  edad = 0
+  email = ""
   if request.method == 'POST':
-    pass
+    nom = alumno_clase.nombre.data
+    apa = alumno_clase.apaterno.data
+    ama = alumno_clase.amaterno.data
+    edad = alumno_clase.edad.data
+    email = alumno_clase.email.data  
   
-  
-  return render_template("alumnos2.html", form = alumno_clase)
+  return render_template("alumnos2.html", form = alumno_clase, nom=nom, apa=apa, ama=ama, edad=edad, email=email)
 
 @app.route("/maestros")
 def maestros():
