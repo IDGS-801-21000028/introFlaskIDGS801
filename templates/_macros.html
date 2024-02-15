@@ -9,5 +9,12 @@
 
 <label style="text-transform: capitalize;">{{field.label}}</label>
 <div>{{field(**kwargs) | safe}}</div>
+{% if field.errors %}
+  <ul style="list-style: none;">
+    {% for error in field.errors %}
+      <li style="color:red">{{error}}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
   
 {% endmacro %}
