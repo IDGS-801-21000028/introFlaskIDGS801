@@ -1,5 +1,5 @@
 from wtforms import Form
-from wtforms import StringField, TelField, IntegerField
+from wtforms import StringField, IntegerField
 from wtforms import EmailField
 from wtforms import validators
 
@@ -17,10 +17,8 @@ class UserForm(Form):
     validators.length(min=4, max=15, message="Error en la longitud.")
   ])
   email = EmailField("email",[
-    validators.DataRequired(message="El campo es requerido."),
-    validators.email(message="Ingresa un email valido.")
+    validators.DataRequired(message="El campo es requerido.")    
   ])
   edad = IntegerField("edad",[
-    validators.DataRequired(message="El campo es requerido."),
-    validators.length(min=1, max=2, message="Error en la longitud.")
+    validators.DataRequired(message="El campo es requerido."),   
   ])

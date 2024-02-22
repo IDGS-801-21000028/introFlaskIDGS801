@@ -1,6 +1,5 @@
 from io import open
 
-
 # Escritura de archivos
 # archivo1 = open('archivo.txt', 'a')
 # archivo1.write("Saludo IDGS801 Nuevo \n")
